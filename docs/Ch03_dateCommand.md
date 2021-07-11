@@ -78,7 +78,8 @@ Sun Jul 11 21:59:44 IST 2021
 ```
 ### 7. Display date and time with different formats (date +[Format])
 ```
-%D: Display date as mm/dd/yy.       
+%D: Display date as mm/dd/yy.   
+%F: Display full date in (yyyy-mm-dd format)
 %d: Display the day of the month (01 to 31).       
 %a: Displays the abbreviated name for weekdays (Sun to Sat).
 %A: Displays full weekdays (Sunday to Saturday).
@@ -93,7 +94,19 @@ Sun Jul 11 21:59:44 IST 2021
 %M: Display the minute.
 %S: Display the seconds.
 ```
-
+<b>Examples </b>
+```
+date +%d-%M-%Y
+```
+<b>Output</b>
+```
+11-10-2021
+```
+<b> Create a file with filename with date 
+```
+   touch file_`date +%d-%M-%Y`
+   # it will create a file with name file_11-14-2021
+```
   
   
   
