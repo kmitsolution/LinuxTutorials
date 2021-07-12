@@ -14,7 +14,7 @@ With the help of touch command you can create an empty file as well as change th
 ```
 touch test{1..20}.txt
 ```
-### 4. To change the access and modification time of a file
+### 4. To change the access time of a file
 ```
   touch -a test1.txt
 ```
