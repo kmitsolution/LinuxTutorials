@@ -41,6 +41,41 @@
   ##### remove origfile and verify the linkdir/origfile exists and it should have same content 
      $ rm origfile
      $ ls -li linkdir/origfile
-     
-     
-```
+
+### Soft Links
+<ul>
+  <li>It is same as windows shortcut feature.</li>
+  <li>Each soft linked file contains a separate Inode value that points to the original file.</li>
+  <li>Size of original file is differnt from soft link file </li>
+  <li>Soft Link contains the path for original file and not the contents.</li>
+  <li>A soft link can link to a directory</li>
+  <li>If the soft link is deleted then there is no impact of original file</li>
+  <li>If original file is deleted then there is no use of soft link</li>
+  <li>Changing the name of original file makes soft link as useless</li>
+  <li> unlink <<soft link file>> unlink the soft link of the file </li>
+  <li>A Soft link can be created across the partitions</li>
+  </ul>  
+
+#### Example
+
+##### Create a file call origfile 
+    $ echo "Soft link example" >> origfile
+##### Create a directory
+    $ mkdir softlinkdir
+##### Create a soft link file
+    $ ln -s origfile softlinkdir/
+##### Check the inode number and size of origfile
+    $ ls -li origfile
+##### Check the inode number and size of softlinkdir/origfile ( it should be different from origfile)
+    $ ls -li softlinkdir/origfile
+    15338 lrwxrwxrwx. 1 root root 8 Jul 14 11:40 origfile -> origfile
+##### Delete softlinkdir/origfile and read the content of origfile, there will not be any impact of origfile
+    $ rm softlinkdir/origfile
+    $ cat origfile
+    
+   
+  
+
+
+
+
